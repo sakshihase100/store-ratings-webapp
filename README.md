@@ -1,5 +1,5 @@
 # Store Rating App
-
+ Output: https://github.com/sakshihase100/store-ratings-webapp/commit/459f0129651df2a5da43e0be7a4ecca9b789e821
 A full-stack web application that allows users to rate and review stores. Admins can manage stores, owners can view and manage their stores, 
 and users can rate or edit ratings. The app supports role-based dashboards and interactive rating functionality.
 
