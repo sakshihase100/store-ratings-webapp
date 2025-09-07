@@ -32,7 +32,7 @@ and users can rate or edit ratings. The app supports role-based dashboards and i
 
 ### Backend
 1. Clone the repository:
-git clone https://github.com/sagardhondge/Store-Rating-App.git
+
 
 2.Navigate to backend folder:
 cd backend
