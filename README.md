@@ -51,7 +51,7 @@ PORT=4000
 
 5. Start the server:
 npm start
-Server runs at http://localhost:4000.
+Server runs at (http://localhost:5173/stores).
 
 ### Frontend
 
