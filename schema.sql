@@ -1,0 +1,48 @@
+
+CREATE DATABASE IF NOT EXISTS store_ratings;
+USE store_ratings;
+
+CREATE TABLE IF NOT EXISTS roles (
+  id TINYINT PRIMARY KEY,
+  name VARCHAR(20) UNIQUE NOT NULL
+);
+INSERT IGNORE INTO roles (id,name) VALUES 
+(1,'ADMIN'),
+(2,'USER'),
+(3,'OWNER');
+
+SELECT * FROM roles;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(60) NOT NULL,
+  email VARCHAR(120) NOT NULL UNIQUE,
+  address VARCHAR(400) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role_id TINYINT NOT NULL,
+  FOREIGN KEY (role_id) REFERENCES roles(id)
+);
+SELECT * FROM users;
+
+CREATE TABLE IF NOT EXISTS stores (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(120),
+  address VARCHAR(400) NOT NULL,
+  owner_user_id INT NULL,
+  FOREIGN KEY (owner_user_id) REFERENCES users(id)
+);
+
+SELECT * FROM stores;
+
+CREATE TABLE IF NOT EXISTS ratings (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  store_id INT NOT NULL,
+  rating TINYINT NOT NULL CHECK(rating BETWEEN 1 AND 5),
+  UNIQUE(user_id, store_id),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (store_id) REFERENCES stores(id)
+);
+SELECT * FROM ratings;
+
